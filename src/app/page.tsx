@@ -1,6 +1,14 @@
+"use client";
+
+import { useEffect } from "react";
 import { ChevronRight, Notebook, User, Zap } from "lucide-react";
+import { userLoggedIn } from "@/utils/auth";
 
 export default function Home() {
+  useEffect(() => {
+    if (userLoggedIn()) window.location.href = "/dashboard";
+  }, []);
+
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <main className="flex flex-col gap-2 items-center">
