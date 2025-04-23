@@ -150,7 +150,7 @@ export function Note({
             </Button>
           </Menubar>
         </CardHeader>
-        <CardContent className="h-full flex gap-4">
+        <CardContent className="h-full flex flex-col gap-4 md:flex-row">
           <Textarea
             className="w-full h-full resize-none"
             placeholder={note.content}
