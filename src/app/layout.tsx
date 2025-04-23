@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SupabaseProvider } from "@/providers/supabase";
 
 import "./globals.css";
+import { QueryProvider } from "@/providers/queries";
 
 export const metadata: Metadata = {
   title: "Notesee",
@@ -14,9 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <SupabaseProvider>
-          {children}
-        </SupabaseProvider>
+        <QueryProvider>
+          <SupabaseProvider>
+            {children}
+          </SupabaseProvider>
+        </QueryProvider>
       </body>
     </html>
   );

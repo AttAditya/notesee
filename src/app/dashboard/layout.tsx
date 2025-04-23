@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 
 import { NotesProvider } from "@/providers/notes";
-import { QueryProvider } from "@/providers/queries";
 import { userLoggedIn } from "@/utils/auth";
 
 export default function DashboardLayout({ children }: Readonly<{
@@ -14,10 +13,8 @@ export default function DashboardLayout({ children }: Readonly<{
   }, []);
 
   return (
-    <QueryProvider>
-      <NotesProvider>
-        {children}
-      </NotesProvider>
-    </QueryProvider>
+    <NotesProvider>
+      {children}
+    </NotesProvider>
   );
 }

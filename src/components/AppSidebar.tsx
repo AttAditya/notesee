@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { ChevronDown, NotebookIcon, Plus } from "lucide-react";
 
@@ -59,10 +59,15 @@ export function AppSidebar() {
     openNote: OpenNoteType;
     createNewNote: CreateNewNoteType;
   } = useContext<NotesContextType>(NotesContext);
+  const [userEmail, setUserEmail] = useState<string>("Loading...");
 
   const handleSignOut = (() => {
     signOut();
   });
+
+  useEffect(() => {
+    setUserEmail(getUser()?.email);
+  }, []);
 
   return (
     <Sidebar>
@@ -75,7 +80,7 @@ export function AppSidebar() {
                   className="cursor-pointer"
                 >
                   <span className="w-full overflow-hidden text-ellipsis">
-                    {getUser()?.email}
+                    {userEmail}
                   </span>
                   <ChevronDown />
                 </SidebarMenuButton>
