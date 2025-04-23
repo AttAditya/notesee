@@ -93,7 +93,7 @@ export function RegisterForm({
                           fill="currentColor"
                           />
                       </svg>
-                      Login with Google
+                      Register with Google
                     </>)
                   }
                 </Button>
