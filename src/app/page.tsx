@@ -10,8 +10,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <main className="flex flex-col gap-2 items-center">
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <main className="py-10 flex flex-col gap-2 items-center w-full">
         <h1 className="text-8xl">
           Notesee
         </h1>
@@ -20,32 +20,32 @@ export default function Home() {
           Easing summarizing notes
         </h2>
 
-        <ul className="flex gap-10 m-16 items-center">
+        <ul className="flex flex-col gap-10 my-16 items-center justify-center md:flex-row">
           <li className="w-80 bg-black/5 rounded-2xl p-8 flex flex-col items-center gap-4">
             <User className="rounded-full w-10 h-10 bg-black text-white p-3" />
             Login to Notesee
           </li>
-          <ChevronRight />
+          <ChevronRight className="rotate-90 md:rotate-0" />
           <li className="w-80 bg-black/5 rounded-2xl p-8 flex flex-col items-center gap-4">
             <Notebook className="rounded-full w-10 h-10 bg-black text-white p-3" />
             Write/paste your notes
           </li>
-          <ChevronRight />
+          <ChevronRight className="rotate-90 md:rotate-0" />
           <li className="w-80 bg-black/5 rounded-2xl p-8 flex flex-col items-center gap-4">
             <Zap className="rounded-full w-10 h-10 bg-black text-white p-3" />
             Run the summarizer
           </li>
         </ul>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a href="/auth/login">
-            <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer">
+        <div className="p-4 flex gap-4 justify-center items-center flex-col sm:flex-row w-3/4">
+          <a href="/auth/login" className="w-full md:w-fit">
+            <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer w-full">
               Login
             </button>
           </a>
 
-          <a href="/auth/register">
-            <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer">
+          <a href="/auth/register" className="w-full md:w-fit">
+            <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer w-full">
               Register
             </button>
           </a>
